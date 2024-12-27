@@ -1,7 +1,223 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Demo page for CrossMuSim: A Cross-Modal Framework for Music Similarity Retrieval">
+  <title>CrossMuSim: A Cross-Modal Framework for Music Similarity Retrieval with LLM-Powered Text Description Sourcing and Mining</title>
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f9;
+    }
+
+    /* Header */
+    header {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #2c3e50;
+      padding-bottom: 5px;
+    }
+
+    section p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    table th, table td {
+      text-align: left;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    table th {
+      background-color: #2c3e50;
+      color: white;
+    }
+
+    table caption {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 1rem;
+      text-align: left;
+    }
+
+    /* Example Titles */
+    .example-title {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 10px 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      main {
+        margin: 10px;
+        padding: 15px;
+      }
+
+      table th, table td {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+  <!-- Header -->
+  <header>
+    <h1>CrossMuSim: A Cross-Modal Framework for Music Similarity Retrieval</h1>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Abstract Section -->
+    <section id="abstract">
+      <h2>Abstract</h2>
+      <p>
+       Music similarity retrieval is fundamental for managing and exploring relevant content from large collections in streaming platforms. This paper presents a novel cross-modal
+       contrastive learning framework that leverages the open-ended nature of text descriptions to guide music similarity modeling, addressing the limitations of traditional uni-modal 
+       approaches in capturing complex musical relationships. To overcome the scarcity of high-quality text-music paired data, this paper introduces a dual-source data acquisition approach
+       combining online scraping and LLM-based prompting, where carefully designed prompts leverage LLMs’ comprehensive music knowledge to generate contextually rich descriptions. 
+       Extensive experiments demonstrate that the proposed framework achieves significant performance improvements over existing benchmarks through objective metrics, subjective evaluations, 
+       and real-world A/B testing on a commercial music streaming platform.
+      </p>
+    </section>
+
+    <!-- Data Acquisition Section -->
+    <section id="data-acquisition">
+      <h2>Data Acquisition</h2>
+      <p>
+        To address the textual data scarcity, we introduce two complementary solutions carefully designed to flexibly source a broad range of music using accessible resources:
+      </p>
+      <h3>1. Online Scraping</h3>
+      <p>
+        We source usic descriptions from a Chinese web encyclopedia (CWE) with dedicated music pages that encompass a wide variety of music genres. For each piece of music retrieved, 
+        we scrape its metadata, background, and song review sections. The song review section provides detailed descriptions that often integrate multiple aspects of the music, 
+        along with additional context such as historical background and MIR characteristics. These entries are typically curated by experienced contributors, ensuring high-quality content.
+      </p>
+      <h3>2. LLM-Based Prompting</h3>
+      <p>
+        To generate high-quality, contextually rich text descriptions for music tracks, we used Large Language Models (LLMs).
+      </p>
+
+      <!-- Prompt Table -->
+      <table>
+        <caption>Prompt Structure</caption>
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>System</td>
+            <td>You are a music critic. Provide a detailed description of the song's musical semantics.</td>
+          </tr>
+          <tr>
+            <td>User</td>
+            <td>Artist: Beyoncé, Title: If I Were a Boy</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Examples -->
+      <h3>Generated Examples</h3>
+      <p class="example-title">Example 1: Artist - Adele, Title - Rolling in the Deep</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GPT-4o-mini</td>
+            <td>A soulful pop ballad with powerful vocals.</td>
+          </tr>
+          <tr>
+            <td>Qwen2-7B</td>
+            <td>A bluesy pop song with emotional depth.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- In-House Collection Section -->
+    <section id="in-house-collection">
+      <h2>In-House Collection</h2>
+      <p>
+        Our in-house collection includes 200,000 songs, with detailed metadata and audio features such as tempo, key, and energy.
+      </p>
+    </section>
+
+    <!-- Evaluation Results Section -->
+    <section id="evaluation-results">
+      <h2>Evaluation Results</h2>
+      <p>
+        The framework was evaluated using objective metrics, subjective evaluations, and real-world testing.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 CrossMuSim. All rights reserved.</p>
+  </footer>
 </body>
 </html>
