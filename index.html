@@ -104,7 +104,7 @@
     }
 
     /* Responsive Design */
-    @media (max-width: 768px) {
+    @media (max-width: 1080px) {
       main {
         margin: 10px;
         padding: 15px;
@@ -141,22 +141,11 @@
       </p>
     </section>
 
-    <!-- Data Acquisition Section -->
-    <section id="data-acquisition">
-      <h2>Data Acquisition</h2>
+    <!-- LLM-Based Prompting Section -->
+    <section id="llm-based-prompting">
+      <h2>LLM-Based Prompting</h2>
       <p>
         To address the textual data scarcity, we introduce two complementary solutions carefully designed to flexibly source a broad range of music using accessible resources:
-      </p>
-      <h3>1. Online Scraping</h3>
-      <p>
-        We source music descriptions from a Chinese web encyclopedia (CWE) with dedicated music pages that encompass a wide variety of music genres. For each piece of music retrieved, 
-        we scrape its metadata, background, and song review sections. The song review section provides detailed descriptions that often integrate multiple aspects of the music, 
-        along with additional context such as historical background and MIR characteristics. These entries are typically curated by experienced contributors, ensuring high-quality content.
-      </p>
-      <h3>2. LLM-Based Prompting</h3>
-      <p>
-        We leverage LLMs’ extensive knowledge of well-known songs and artists to generate contextually diverse descriptions for better similarity modeling using only song identifiers as cues.
-        We explore this approach using two state-of-the-art compact LLMs, GPT-4o-mini and Qwen2-7B.
       </p>
 
       <!-- Prompt Structure -->
@@ -184,43 +173,40 @@
         </tbody>
       </table>
 
-      <!-- Generated Examples -->
-      <h3>Generated Examples</h3>
-      <h4>Example 1: Ed Sheeran - Galway Girl</h4>
-      <table>
-        <thead>
-          <tr>
-            <th>Model</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>GPT-4o-mini</td>
-            <td>
-              "Galway Girl" by Ed Sheeran is a vibrant blend of pop and folk, infused with traditional Irish musical elements that create an infectious and celebratory atmosphere. 
-              The song features a lively melody characterized by its catchy hooks and rhythmic phrasing, which is accentuated by the use of acoustic guitar, fiddle, and a steady percussive
-              beat that cultivates a danceable feel. Thematically, "Galway Girl" tells a romantic story of a whirlwind encounter with a captivating Irish girl, capturing the essence of youthful love and adventure. 
-              The lyrics evoke a sense of nostalgia and yearning, painted with vivid imagery of Irish culture, while the upbeat tempo and joyful instrumentation elicit feelings of happiness and excitement. 
-              Overall, the song encapsulates a playful yet heartfelt exploration of love set against a backdrop of cultural celebration, making it a captivating listen that resonates with a wide audience.
-            </td>
-          </tr>
-          <tr>
-            <td>Qwen2-7B</td>
-            <td>
-              "Galway Girl" by Ed Sheeran is an enchanting folk-pop ballad that transports listeners to the vibrant and mystical landscapes of Ireland. The song's genre blends elements of
-              traditional Irish music with modern pop sensibilities, creating a unique sound that captures the essence of love and adventure. The melody is gentle yet captivating, featuring 
-              a soft acoustic guitar as the primary instrument, which sets a warm and inviting tone. Accompanied by a subtle rhythm section that includes percussion and a light bassline, 
-              the track maintains a laid-back groove that complements the storytelling nature of the lyrics. Ed Sheeran's vocal delivery is heartfelt and emotive, showcasing his ability to 
-              connect with the audience through his voice. The lyrics paint a vivid picture of a relationship set against the backdrop of Galway, Ireland, where the protagonist falls for a free-spirited girl. 
-              Themes of romance, spontaneity, and cultural celebration are intertwined, evoking feelings of joy, longing, and a sense of discovery. Emotions range from youthful exuberance to tender intimacy, 
-              reflecting the multifaceted nature of human connection. The inclusion of Irish accents in some parts of the song and the mention of specific Irish traditions and landmarks adds authenticity and 
-              cultural richness, making "Galway Girl" not just a love song but also a celebration of place and heritage. Overall, "Galway Girl" is a masterful blend of musical genres that tells a universal 
-              story through a uniquely personal and culturally rich lens.
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <!-- Example 1 -->
+      <div style="margin-bottom: 20px;">
+        <h4>Example 1: Ed Sheeran - Galway Girl</h4>
+        <p>
+          "Galway Girl" by Ed Sheeran is a vibrant blend of pop and folk, infused with traditional Irish musical elements that create an infectious and celebratory atmosphere. 
+          The song features a lively melody characterized by its catchy hooks and rhythmic phrasing, which is accentuated by the use of acoustic guitar, fiddle, and a steady percussive
+          beat that cultivates a danceable feel. Thematically, "Galway Girl" tells a romantic story of a whirlwind encounter with a captivating Irish girl, capturing the essence of youthful love and adventure. 
+          The lyrics evoke a sense of nostalgia and yearning, painted with vivid imagery of Irish culture, while the upbeat tempo and joyful instrumentation elicit feelings of happiness and excitement. 
+          Overall, the song encapsulates a playful yet heartfelt exploration of love set against a backdrop of cultural celebration, making it a captivating listen that resonates with a wide audience.
+        </p>
+      </div>
+      
+      <!-- Example 2 -->
+      <div style="margin-bottom: 20px;">
+        <h4>Example 2: Adele - Someone Like You</h4>
+        <p>
+          "Someone Like You" by Adele is a poignant and heart-wrenching ballad that delves into themes of heartbreak, longing, and acceptance. The song is characterized by its minimalistic 
+          arrangement, featuring just a piano accompaniment that allows Adele's raw and emotive vocals to take center stage. Her voice conveys a deep sense of vulnerability and pain, making 
+          the song resonate with anyone who has experienced the loss of love. The lyrics tell the story of coming to terms with an ended relationship, reflecting on the past while wishing 
+          the best for the other person. Through its simplicity and emotional depth, "Someone Like You" captures the universal experience of heartbreak, leaving a lasting impression on listeners.
+        </p>
+      </div>
+      
+      <!-- Example 3 -->
+      <div style="margin-bottom: 20px;">
+        <h4>Example 3: Taylor Swift - All Too Well (10-Minute Version)</h4>
+        <p>
+          "All Too Well (10-Minute Version)" by Taylor Swift is an emotional narrative masterpiece that chronicles the rise and fall of a deeply personal relationship. The extended version 
+          expands on the original with additional verses that provide more context and emotional depth, giving listeners a detailed glimpse into the heartbreak and nostalgia that accompany 
+          lost love. Musically, the song blends soft rock and folk elements, with a steady rhythm that crescendos as the story unfolds. Taylor's lyrical storytelling is vivid and cinematic, 
+          painting scenes of love, betrayal, and reflection with poetic precision. The raw vocal delivery and intricate instrumentation make this version not just a song, but a cathartic journey 
+          through memory and healing. "All Too Well" stands as a testament to Swift's ability to connect with her audience on a deeply personal and emotional level.
+        </p>
+      </div>
     </section>
 
     <!-- In-House Collection Section -->
