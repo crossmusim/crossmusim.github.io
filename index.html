@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Demo page for CrossMuSim: CrossMuSim: A Cross-Modal Framework for Music Similarity Retrieval with LLM-Powered Text Description Sourcing and Mining">
-  <title>CrossMuSim: CrossMuSim: A Cross-Modal Framework for Music Similarity Retrieval with LLM-Powered Text Description Sourcing and Mining</title>
+  <meta name="description" content="Demo page for CrossMuSim: A Cross-Modal Framework for Music Similarity Retrieval with LLM-Powered Text Description Sourcing and Mining">
+  <title>CrossMuSim: A Cross-Modal Framework for Music Similarity Retrieval with LLM-Powered Text Description Sourcing and Mining</title>
   <style>
     /* General Styles */
     * {
@@ -36,7 +36,7 @@
     /* Main Content */
     main {
       max-width: 800px;
-      margin: 20px auto;
+      margin: 0 auto; /* Center the main content */
       padding: 20px;
     }
 
@@ -106,12 +106,27 @@
     /* Responsive Design */
     @media (max-width: 1080px) {
       main {
-        margin: 10px;
+        margin: 10px; /* Keep margin for smaller screens */
         padding: 15px;
       }
 
       table th, table td {
         font-size: 0.9rem;
+      }
+    }
+
+    /* Extra Responsive Adjustments */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem; /* Adjust header size */
+      }
+
+      section {
+        padding: 15px; /* Reduce padding for smaller screens */
+      }
+
+      main {
+        padding: 10px; /* Further reduce padding */
       }
     }
   </style>
@@ -156,10 +171,10 @@
             <td>
               You are a music critic. Please provide a detailed description of the song's musical semantics based on the information I provide, including the artist name and song title. 
               The paragraph should cover the following elements: 
-              <span style="color: darkblue;">genre</span>, 
+              <span style="color: blue;">genre</span>, 
               <span style="color: crimson;">melody</span>, 
               <span style="color: darkorange;">accompaniment</span>, 
-              <span style="color: indigo;">themes</span>, 
+              <span style="color: purple;">themes</span>, 
               and 
               <span style="color: mediumseagreen;">emotions</span>.
             </td>
