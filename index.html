@@ -35,9 +35,13 @@
 
     /* Main Content */
     main {
-      max-width: 800px;
-      margin: 0 auto; /* Ensure main content is always centered */
+      width: auto; /* Allow dynamic sizing */
+      max-width: 100%; /* Prevent overflow */
+      min-width: 100%; /* Ensure it is at least as wide as the viewport */
       padding: 20px;
+      margin: 0 auto; /* Center the container */
+      display: flex; /* Use flexbox to handle dynamic content */
+      flex-direction: column; /* Ensure content flows vertically */
     }
 
     section {
@@ -70,12 +74,10 @@
 
     /* Tables */
     table {
-      width: 100%;
+      width: max-content; /* Ensure the table only takes as much width as needed */
+      max-width: 100%; /* Prevent table from exceeding viewport width */
       border-collapse: collapse;
-      margin-top: 1rem;
-      max-width: 100%;
-      overflow-x: audto;
-      display: block;
+      margin: 0 auto; /* Center the table within the container */
     }
 
     table th, table td {
@@ -128,6 +130,12 @@
       main {
         padding: 10px; /* Further reduce padding */
         margin: 0 auto; /* Ensure it remains centered */
+      }
+
+      table {
+        width: 100%; /* On very small screens, force table to take full width */
+        display: block; /* Allow scrolling if necessary */
+        overflow-x: auto;
       }
     }
   </style>
